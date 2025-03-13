@@ -164,4 +164,8 @@ if __name__ == '__main__':
     plt.figure()
     plt.plot(wdf_x_axes[0], wdf_spectra[0])
     plt.xlabel('{} ({})'.format(wdf_x_axes_labels[0]['XListType'], wdf_x_axes_labels[0]['XListUnits']))
+    plt.ylabel('({})'.format(wdf_header['SpectraUnit']))
+    plt.xlim(0, 200)
+    plt.ylim(0, 4000)
+    plt.grid()
     plt.show()
