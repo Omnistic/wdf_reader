@@ -156,16 +156,18 @@ def get_spectra(wdf_bytes, wdf_header):
     return spectra, x_axes, x_axes_labels
 
 if __name__ == '__main__':
-    wdf_header, wdf_spectra, wdf_x_axes, wdf_x_axes_labels = read_wdf(r'C:\Users\davnguyen\Documents\python_projects\raman\whole_range.wdf')
+    wdf_header, wdf_spectra, wdf_x_axes, wdf_x_axes_labels = read_wdf(r'\\scopem-staff.ethz.ch\\staff\\Nguyen.David\\work\\RAMAN\\epoxy_cure.wdf')
 
     pprint.pp(wdf_header)
-    pprint.pp(wdf_x_axes_labels)
+    pprint.pp(wdf_x_axes_labels[0])
 
     plt.figure()
-    plt.plot(wdf_x_axes[0], wdf_spectra[0])
+
+    for ii in range(len(wdf_spectra)):
+        plt.plot(wdf_x_axes[ii], wdf_spectra[ii])
+
     plt.xlabel('{} ({})'.format(wdf_x_axes_labels[0]['XListType'], wdf_x_axes_labels[0]['XListUnits']))
     plt.ylabel('({})'.format(wdf_header['SpectraUnit']))
-    plt.xlim(0, 200)
-    plt.ylim(0, 4000)
     plt.grid()
+
     plt.show()
