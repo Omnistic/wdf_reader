@@ -227,7 +227,7 @@ def get_spectra(wdf_bytes, wdf_header):
     return spectra, x_axes, x_axes_labels
 
 if __name__ == '__main__':
-    wdf_header, wdf_origin_list_info, wdf_origin_list, wdf_spectra, wdf_x_axes, wdf_x_axes_labels = read_wdf(r'\\scopem-staff.ethz.ch\\staff\\Nguyen.David\\work\\RAMAN\\epoxy_cure.wdf')
+    wdf_header, wdf_origin_list_info, wdf_origin_list, wdf_spectra, wdf_x_axes, wdf_x_axes_labels = read_wdf(r'file.wdf')
 
     pprint.pp(wdf_header)
     pprint.pp(wdf_origin_list_info)
